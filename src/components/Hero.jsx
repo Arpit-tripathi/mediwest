@@ -48,52 +48,64 @@
 
 
 
-import Card from './Card';
-
-import LiquidEther from './LiquidEther';
+import React, { useEffect, useState } from "react";
+import Card from "./Card";
+import LiquidEther from "./LiquidEther";
 
 const Hero = () => {
-  
+  const [showEffect, setShowEffect] = useState(false);
+
+  // ✅ Render only after client-side mount to avoid SSR issues
+  useEffect(() => {
+    setShowEffect(true);
+  }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center items-center bg-black overflow-hidden w-screen ">
+    <section
+      id="home"
+      className="relative flex flex-col justify-center items-center min-h-screen w-full bg-black overflow-hidden"
+    >
       {/* LiquidEther Background Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <LiquidEther
-          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.3}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
-        />
-      </div>
+      {showEffect && (
+        <div className="absolute inset-0 z-0 w-full h-full">
+          <LiquidEther
+            colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.3}
+            autoIntensity={2.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={3000}
+            autoRampDuration={0.6}
+          />
+        </div>
+      )}
+
+      {/* Dark Overlay for contrast (optional but improves readability) */}
+      <div className="absolute inset-0 bg-black/60 z-10"></div>
 
       {/* Foreground Content */}
-     <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-500 mb-4 md:mb-6">
+      <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-400 mb-4 md:mb-6 leading-tight">
           Empowering Healthcare Accreditation
         </h1>
         <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 md:mb-12">
-          QARA Healthcare specializes in consultancy for top accreditation bodies.
+          QARA Healthcare specializes in consultancy for NABH, QCI, and QAI accreditation — helping hospitals across India achieve excellence.
         </p>
-
-       
       </div>
     </section>
   );
 };
 
 export default Hero;
+
 
 
 
