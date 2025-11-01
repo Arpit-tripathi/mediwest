@@ -49,16 +49,16 @@
 
 
 import Card from './Card';
-import SplitText from "./SplitText";
+
 import LiquidEther from './LiquidEther';
 
 const Hero = () => {
   
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center items-center bg-black overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col justify-center items-center bg-black overflow-hidden w-screen ">
       {/* LiquidEther Background Layer */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <LiquidEther
           colors={['#5227FF', '#FF9FFC', '#B19EEF']}
           mouseForce={20}
@@ -79,7 +79,7 @@ const Hero = () => {
       </div>
 
       {/* Foreground Content */}
-     <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+     <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-500 mb-4 md:mb-6">
           Empowering Healthcare Accreditation
         </h1>
@@ -94,3 +94,61 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+
+// import Card from "./Card";
+// import SplitText from "./SplitText";
+// import LiquidEther from "./LiquidEther";
+
+// const Hero = () => {
+//   return (
+//     <section
+//       id="home"
+//       className="relative flex flex-col justify-center items-center bg-black overflow-hidden w-screen max-w-full"
+//       style={{
+//         height: "100dvh",
+//       }}
+//     >
+//       {/* LiquidEther Background */}
+//       <div
+//         className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"
+//         style={{
+//           width: "100%",
+//           height: "100%",
+//           overflow: "hidden",
+//         }}
+//       >
+//         <LiquidEther
+//           colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
+//           mouseForce={20}
+//           cursorSize={100}
+//           isViscous={false}
+//           viscous={30}
+//           iterationsViscous={32}
+//           iterationsPoisson={32}
+//           resolution={0.5}
+//           isBounce={false}
+//           autoDemo={true}
+//           autoSpeed={0.3}
+//           autoIntensity={2.2}
+//           takeoverDuration={0.25}
+//           autoResumeDelay={3000}
+//           autoRampDuration={0.6}
+//         />
+//       </div>
+
+//       {/* Foreground Content */}
+//       <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8">
+//         <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-blue-500 mb-4 md:mb-6">
+//           Empowering Healthcare Accreditation
+//         </h1>
+//         <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 md:mb-12">
+//           QARA Healthcare specializes in consultancy for top accreditation bodies.
+//         </p>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;

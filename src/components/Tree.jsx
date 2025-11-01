@@ -62,7 +62,7 @@ const TreeNode = ({ title, children }) => (
 
 const Tree = () => {
   const treeData = {
-    title: 'MediWest Consultancy',
+    title: 'QARA Healthcare',
     children: [
       { title: 'QCI' },
       {title:'QAI'},
