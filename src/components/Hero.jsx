@@ -53,7 +53,7 @@ import SplitText from "./SplitText";
 import LiquidEther from './LiquidEther';
 
 const Hero = () => {
-  // const services = ["QCI", "NABH", "CGHS", "ECHS", "QAI"];
+  
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center items-center bg-black overflow-hidden">
@@ -79,19 +79,15 @@ const Hero = () => {
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 text-center px-6">
-        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 mb-6">
+     <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-500 mb-4 md:mb-6">
           Empowering Healthcare Accreditation
         </h1>
-        <p className="text-gray-300 mb-12">
+        <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 md:mb-12">
           QARA Healthcare specializes in consultancy for top accreditation bodies.
         </p>
 
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {services.map(service => (
-            <Card key={service} title={service} />
-          ))}
-        </div> */}
+       
       </div>
     </section>
   );
