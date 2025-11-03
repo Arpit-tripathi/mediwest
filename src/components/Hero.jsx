@@ -205,11 +205,11 @@ const Hero = () => {
             resolution={0.5}
             isBounce={false}
             autoDemo={true}
-            autoSpeed={0.3}
+            autoSpeed={0.4}
             autoIntensity={1.8}
-            takeoverDuration={0.25}
-            autoResumeDelay={3000}
-            autoRampDuration={0.6}
+            takeoverDuration={0.1}
+            autoResumeDelay={0}
+            autoRampDuration={0.1}
           />
         </div>
       )}
